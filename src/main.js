@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import * as vueRouter from 'vue-router'
 import home from './pages/home.vue'
 import register from './pages/register.vue'
+import App from './App.vue'
 
 import './assets/main.css'
 
