@@ -14,11 +14,11 @@ export default defineConfig({
   },
   server:{
     proxy:{
-      '^/server/.*':{
+      '/server':{
         target: 'http://43.142.78.228:3000/',
         changeOrigin: true,
-        rewrite: (path)=>{
-
+        rewrite: (path)=> {
+          return path.replace(/^\/server/,'')
         }
       }
     }
