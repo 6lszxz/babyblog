@@ -5,16 +5,16 @@ import {useRouter, useRoute} from 'vue-router'
 const router = useRouter();
 const route =useRoute();
 
-function routerTo(to){
-    console.log(to);
-    router.push(to);
+function routerTo(event){
+    const button = event.target;
+    router.push(button.dataset.to);
 }
 
 </script>
 
 <template>
-    <button to= "/" @click="routerTo(to)">主页</button>
-    <button to ="/register" @click="routerTo(to)">注册</button>
+    <button data-to = "/" @click="routerTo">主页</button>
+    <button data-to ="/register" @click="routerTo">注册</button>
     <router-view></router-view>
 </template>
 

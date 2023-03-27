@@ -3,6 +3,7 @@ import * as vueRouter from 'vue-router'
 import home from './pages/home.vue'
 import register from './pages/register.vue'
 import App from './App.vue'
+import axios from 'axios'
 
 import './assets/main.css'
 
