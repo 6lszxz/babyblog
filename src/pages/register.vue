@@ -10,9 +10,15 @@ let usernameInput = ref('');
 let passwordInput = ref('');
 
 function register(){
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+    if(username>=20){
+        alert('用户名太长啦');
+        return;
+    }
     axios.post('/server/register',{
-        username: usernameInput.value,
-        password: passwordInput.value
+        username: username,
+        password: password
     })
     .then((response)=>{
         alert(response.data);
