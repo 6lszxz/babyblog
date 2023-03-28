@@ -14,6 +14,7 @@ function routerTo(event){
 
 <template>
     <button data-to = "/" @click="routerTo">主页</button>
+    <button data-to = "/login" @click="routerTo">登录</button>
     <button data-to ="/register" @click="routerTo">注册</button>
     <router-view></router-view>
 </template>
