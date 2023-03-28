@@ -2,6 +2,9 @@
 
 import axios from 'axios'
 import {ref} from 'vue'
+import {useRouter} from 'vue-router'
+
+const router = useRouter();
 
 let usernameInput = ref('');
 let passwordInput = ref('');
@@ -12,10 +15,16 @@ function register(){
         password: passwordInput.value
     })
     .then((response)=>{
-        console.log(response);
+        alert(response.data);
+        router.push('/');
     })
     .catch((err)=>{
-        console.log(err);
+        if(err.response){
+            alert(`注册失败，${err.response.data}`);
+        }else{
+            alert(`注册失败，本地错误${err}`);
+        }
+        
     })
 }
 
