@@ -1,9 +1,12 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
+import Cookies from "js-cookie";
 
 export const useUserAccountStore = defineStore('userAccount',()=>{
-    const isLogged = ref(false);
-    const username = ref(undefined);
+    const isLoggedCookie = Cookies.get('isLogged');
+    const usernameCookie = Cookies.get('username');
+    const isLogged = isLoggedCookie ? isLoggedCookie : ref(false);
+    const username = usernameCookie ? usernameCookie : ref(undefined);
 
     function login(usernameInput){
         if(isLogged.value === false){
