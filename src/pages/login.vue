@@ -20,6 +20,7 @@ function login(){
         password: password
     })
     .then((response)=>{
+        userAccountStore.login();
         alert(response.data);
         router.push('/');
     })
@@ -29,7 +30,6 @@ function login(){
         }else{
             alert(`登录失败，本地错误${err}`);
         }
-        
     })
 }
 

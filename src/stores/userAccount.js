@@ -21,4 +21,11 @@ export const useUserAccountStore = defineStore('userAccount',()=>{
             throw(new Error('请先登录'));
         }
     } 
+
+    return{
+        isLogged,
+        username,
+        login,
+        logout
+    }
 })
