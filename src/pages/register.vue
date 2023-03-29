@@ -6,8 +6,8 @@ import {useRouter} from 'vue-router'
 
 const router = useRouter();
 
-let usernameInput = ref('');
-let passwordInput = ref('');
+const usernameInput = ref('');
+const passwordInput = ref('');
 
 function register(){
     const username = usernameInput.value;

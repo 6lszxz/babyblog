@@ -4,10 +4,13 @@ import axios from 'axios'
 import {ref} from 'vue'
 import {useRouter} from 'vue-router'
 
-const router = useRouter();
+import {useUserAccountStore} from '../stores/userAccount'
 
-let usernameInput = ref('');
-let passwordInput = ref('');
+const router = useRouter();
+const userAccountStore = useUserAccountStore();
+
+const usernameInput = ref('');
+const passwordInput = ref('');
 
 function login(){
     const username = usernameInput.value;
