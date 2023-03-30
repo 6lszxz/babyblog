@@ -1,11 +1,15 @@
+import MD5 from 'crypto-js/md5'
+
 export class Article{
-    constructor(title, writer, id, content, createTime, likes){
+    constructor(title, writer, content){
         this.title = title;
         this.writer = writer;
-        this.id = id;
+        this.createTime = new Date().toISOString();
+        // id使用MD5-16进行加密，这样可以生成一段16位的短id
+        this.id = MD5(`${writer}${this.createTime}`).toString().slice(0,16);
         this.content = content;
-        this.createTime = createTime;
-        this.likes = likes;
+        // 刚创建的文章怎么可能会有赞呢
+        this.likes = 0;
     }
     updateTitle(newTitle){
         if(this.title !==newTitle){

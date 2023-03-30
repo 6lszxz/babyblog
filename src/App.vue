@@ -20,6 +20,7 @@ function routerTo(event){
     <button data-to = "/" @click="routerTo">主页</button>
     <button data-to = "/login" @click="routerTo" v-if="!userAccountStore.isLogged">登录</button>
     <button data-to ="/register" @click="routerTo" v-if="!userAccountStore.isLogged">注册</button>
+    <button data-to="/articleEditor" @click="routerTo" >创作中心</button>
     <router-view></router-view>
 </template>
 
