@@ -4,8 +4,6 @@ import App from './App.vue'
 import axios from 'axios'
 import {createPinia} from 'pinia'
 
-import './assets/main.css'
-
 import home from './pages/home.vue'
 import register from './pages/register.vue'
 import login from './pages/login.vue'
@@ -26,6 +24,6 @@ const router = vueRouter.createRouter({
 const pinia = createPinia();
 
 const app = createApp(App);
-app.use(router)
+app.use(router);
 app.use(pinia);
 app.mount('#app')
