@@ -1,12 +1,14 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import Cookies from "js-cookie";
+import { useRouter } from "vue-router";
 
 export const useUserAccountStore = defineStore('userAccount',()=>{
     const isLoggedCookie = Cookies.get('isLogged');
     const usernameCookie = Cookies.get('username');
     const isLogged = isLoggedCookie ? isLoggedCookie : ref(false);
     const username = usernameCookie ? usernameCookie : ref(undefined);
+    const router = useRouter();
 
     function login(usernameInput){
         if(isLogged.value === false){
@@ -20,6 +22,10 @@ export const useUserAccountStore = defineStore('userAccount',()=>{
         if(isLogged.value === true){
             isLogged.value = false;
             username.value = undefined;
+            Cookies.remove('isLogged');
+            Cookies.remove('username');
+            alert('退出成功！');
+            router.push('/');
         }else{
             throw(new Error('请先登录'));
         }
