@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import * as vueRouter from 'vue-router'
 import App from './App.vue'
-import axios from 'axios'
 import {createPinia} from 'pinia'
 
 import home from './pages/home.vue'

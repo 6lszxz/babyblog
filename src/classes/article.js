@@ -4,7 +4,7 @@ export class Article{
     constructor(title, writer, content){
         this.title = title;
         this.writer = writer;
-        this.createTime = new Date().toISOString();
+        this.createTime = Date.now();
         // id使用MD5-16进行加密，这样可以生成一段16位的短id
         this.id = MD5(`${writer}${this.createTime}`).toString().slice(0,16);
         this.content = content;
