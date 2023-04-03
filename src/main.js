@@ -7,12 +7,14 @@ import home from './pages/home.vue'
 import register from './pages/register.vue'
 import login from './pages/login.vue'
 import articleEditor from './pages/articleEditor.vue'
+import articleReading from './pages/articleReading.vue'
 
 const routes =[
     {path: '/', component: home},
     {path: '/register', component: register},
     {path: '/login', component: login},
     {path: '/articleEditor', component: articleEditor},
+    {path: '/article/:id', component: articleReading}
 ]
 
 const router = vueRouter.createRouter({

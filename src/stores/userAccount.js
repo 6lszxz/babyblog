@@ -6,8 +6,8 @@ import { useRouter } from "vue-router";
 export const useUserAccountStore = defineStore('userAccount',()=>{
     const isLoggedCookie = Cookies.get('isLogged');
     const usernameCookie = Cookies.get('username');
-    const isLogged = isLoggedCookie ? isLoggedCookie : ref(false);
-    const username = usernameCookie ? usernameCookie : ref(undefined);
+    const isLogged = isLoggedCookie ? ref(true) : ref(false);
+    const username = usernameCookie ? ref(usernameCookie) : ref(undefined);
     const router = useRouter();
 
     function login(usernameInput){

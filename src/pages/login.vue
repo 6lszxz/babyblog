@@ -20,7 +20,7 @@ function login(){
         password: password
     })
     .then((response)=>{
-        userAccountStore.login();
+        userAccountStore.login(usernameInput.value);
         alert(response.data);
         router.push('/');
     })

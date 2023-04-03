@@ -11,6 +11,7 @@ import 'bytemd/dist/index.css'
 
 const userAccountStore = useUserAccountStore();
 const articleInEditing = ref(new Article('', userAccountStore.username,''));
+console.log(userAccountStore.username);
 // 插件，让其支持GFM语法
 const plugins =[gfm(),];
 
@@ -57,6 +58,8 @@ if(!userAccountStore.isLogged){
     <button @click="addArticle">发布</button>
 </template>
 
-<style scoped>
-
+<style>
+.bytemd {
+    height: calc(100vh - 100px);
+}
 </style>
