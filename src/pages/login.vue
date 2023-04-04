@@ -36,12 +36,15 @@ function login(){
 </script>
 
 <template>
-    登录
-    <div>
-        用户名
+    <div class="informationInput">
+        <h1>登录</h1>
+        <h2>用户名</h2>
         <input v-model="usernameInput"/>
-        密码
+        <h2>密码</h2>
         <input v-model="passwordInput"/>
         <button @click="login">登录</button>
     </div>
 </template>
+
+<style>
+</style>

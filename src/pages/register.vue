@@ -37,12 +37,22 @@ function register(){
 </script>
 
 <template>
-    注册
-    <div>
-        用户名
+    <div class="informationInput">
+        <h1>注册</h1>
+        <h2>用户名</h2>
         <input v-model="usernameInput"/>
-        密码
+        <h2>密码</h2>
         <input v-model="passwordInput"/>
         <button @click="register">注册</button>
     </div>
 </template>
+
+<style>
+.informationInput{
+    display: flex;
+    flex-direction: column;
+}
+.informationInput *{
+    width: 20vw;
+}
+</style>
