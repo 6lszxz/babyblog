@@ -29,13 +29,16 @@ function routerTo(event){
 <style scoped>
 
 #menu{
-    height: 5vh;
-    width: 100vw;
+    height: 10vh;
+    width: 99vw;
 }
 
 button{
     margin-left: 5vw;
     margin-right: 5vw;
+    margin-top: 1vh;
+    height: 8vh;
+    width: 10vw;
 }
 
 </style>

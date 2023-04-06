@@ -25,12 +25,19 @@ function linkToArticle(){
 </script>
 
 <template>
-    <div @click="linkToArticle">
-        {{ article.title }}
-        {{ article.content }}
-        
+    <div @click="linkToArticle" id="informationShow">
+        <h2>
+            {{ article.title }}
+        </h2>
+        <div>
+            {{ article.content }}
+        </div>
     </div>
 </template>
 
-<style>
+<style scoped>
+#informationShow{
+    display: flex;
+    flex-direction: column;
+}
 </style>

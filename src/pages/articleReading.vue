@@ -31,12 +31,22 @@ axios.get(`/server/getArticle/${route.params.id}`)
 </script>
 
 <template>
-    <h1>{{ article.title }}</h1>
-    <div>
-        作者：{{ article.author }}
-    </div>
-    <Viewer :value ="article.content" />
-    <div>
-        创建于{{ DateTime.fromMillis(Number(article.createTime)).toLocaleString(DateTime.DATE_MED)}}
+    <div id="articleReadingBox">
+        <h1>{{ article.title }}</h1>
+        <div>
+            作者：{{ article.author }}
+        </div>
+        <Viewer :value ="article.content" />
+        <div>
+            创建于{{ DateTime.fromMillis(Number(article.createTime)).toLocaleString(DateTime.DATE_MED)}}
+        </div>
     </div>
 </template>
+
+<style>
+#articleReadingBox{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+</style>
