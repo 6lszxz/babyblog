@@ -48,13 +48,4 @@ function register(){
 </template>
 
 <style>
-.informationInput{
-    display: flex;
-    flex-direction: column;
-}
-.informationInput *{
-    width: 20vw;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-}
 </style>

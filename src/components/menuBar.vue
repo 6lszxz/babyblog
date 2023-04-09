@@ -9,6 +9,7 @@ const userAccountStore =  useUserAccountStore();
 
 function routerTo(event){
     const button = event.target;
+
     router.push(button.dataset.to);
 }
 </script>
@@ -39,6 +40,14 @@ button{
     margin-top: 1vh;
     height: 8vh;
     width: 10vw;
+}
+
+button:hover{
+    background-color: aqua;
+}
+
+.active{
+    background-color: chartreuse;
 }
 
 </style>

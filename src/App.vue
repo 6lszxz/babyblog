@@ -8,6 +8,5 @@ import menuBar from './components/menuBar.vue';
     <router-view/>
 </template>
 
-<style scoped>
-
+<style >
 </style>

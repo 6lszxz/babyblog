@@ -9,6 +9,8 @@ import login from './pages/login.vue'
 import articleEditor from './pages/articleEditor.vue'
 import articleReading from './pages/articleReading.vue'
 
+import './assets/main.css'
+
 const routes =[
     {path: '/', component: home},
     {path: '/register', component: register},
