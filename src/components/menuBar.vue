@@ -9,21 +9,25 @@ const userAccountStore =  useUserAccountStore();
 
 function routerTo(event){
     const button = event.target;
-
+    const buttons = document.getElementsByClassName('barButton');
+    for(let i of buttons){
+        i.classList.remove('active');
+    }
+    button.classList.add('active');
     router.push(button.dataset.to);
 }
 </script>
 
 <template>
     <div id="menu">
-        <button data-to = "/" @click="routerTo">主页</button>
+        <button data-to = "/" @click="routerTo" class="barButton active">主页</button>
         <button data-to = "/login" @click="routerTo" 
-        v-if="!userAccountStore.isLogged">登录</button>
+        v-if="!userAccountStore.isLogged" class="barButton">登录</button>
         <button data-to ="/register" @click="routerTo" 
-        v-if="!userAccountStore.isLogged">注册</button>
-        <button data-to="/articleEditor" @click="routerTo" >创作中心</button>
+        v-if="!userAccountStore.isLogged" class="barButton">注册</button>
+        <button data-to="/articleEditor" @click="routerTo" class="barButton" >创作中心</button>
         <button v-if="userAccountStore.isLogged" 
-        @click="userAccountStore.logout">退出登录</button>
+        @click="userAccountStore.logout" class="barButton">退出登录</button>
     </div>
 </template>
 
