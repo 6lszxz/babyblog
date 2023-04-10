@@ -7,13 +7,8 @@ import ArticlePreview from '../components/ArticlePreview.vue';
 </script>
 
 <template>
-    <header>
-        <ArticlePreview></ArticlePreview>
-        <div class="wrapper">
-        </div>
-    </header>
-    <main>
-    </main>
+    <ArticlePreview></ArticlePreview>
+    <ArticlePreview></ArticlePreview>
 </template>
 
 <style scoped>

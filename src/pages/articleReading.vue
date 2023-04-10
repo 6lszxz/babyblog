@@ -48,5 +48,18 @@ axios.get(`/server/getArticle/${route.params.id}`)
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+#articleReadingBox div{
+    width: 90vw;
+    margin: 0 0 0 5vw;
+    padding: 0 ;
+}
+
+#articleReadingBox h1{
+    margin: 0 0 0 5vw;
+    padding: 0 ;
 }
 </style>

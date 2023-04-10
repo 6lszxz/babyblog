@@ -39,5 +39,14 @@ function linkToArticle(){
 #informationShow{
     display: flex;
     flex-direction: column;
+    width: 40vw;
+    height: 15vh;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 5px;
+    background-color: #f9f7f0;;
+}
+
+#informationShow:hover{
+    cursor: pointer;
 }
 </style>

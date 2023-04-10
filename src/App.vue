@@ -5,8 +5,16 @@ import menuBar from './components/menuBar.vue';
 
 <template>
     <menu-bar/>
-    <router-view/>
+    <div class="main">
+        <router-view/>
+    </div>
+    
 </template>
 
-<style >
+<style>    
+.main{
+    width: 100vw;
+    height: 91vh;
+    background-color: #DAF5FF;
+}
 </style>
