@@ -9,22 +9,27 @@ import {useUserAccountStore} from '../stores/userAccount'
 const router = useRouter();
 const userAccountStore = useUserAccountStore();
 
-const usernameInput = ref('');
+const emailInput = ref('');
 const passwordInput = ref('');
+const captchaInput = ref('');
+const captcha = ref({});
 
 function login(){
-    const username = usernameInput.value;
+    const email = emailInput.value;
     const password = passwordInput.value;
+    const captcha = captchaInput.value;
     axios.post('/server/login',{
-        username: username,
-        password: password
+        email: email,
+        password: password,
+        captcha: captcha,
     })
     .then((response)=>{
-        userAccountStore.login(usernameInput.value);
+        userAccountStore.login(emailInput.value);
         alert(response.data);
         router.push('/');
     })
     .catch((err)=>{
+        getCaptcha();
         if(err.response){
             alert(`登录失败，${err.response.data}`);
         }else{
@@ -33,15 +38,28 @@ function login(){
     })
 }
 
+function getCaptcha(){
+    axios.get('/server/getCaptcha')
+    .then((response)=>{
+        captcha.value = response.data;
+    })
+}
+
+getCaptcha();
+// 在最开始需要获取一个验证码
+
 </script>
 
 <template>
     <div class="informationInput">
         <h1>登录</h1>
-        <h2>用户名</h2>
-        <input v-model="usernameInput"/>
+        <h2>邮箱</h2>
+        <input v-model="emailInput"/>
         <h2>密码</h2>
         <input v-model="passwordInput"/>
+        <h2>验证码</h2>
+        <input v-model="captchaInput"/>
+        <div v-html="captcha" @click="getCaptcha"></div>
         <button @click="login">登录</button>
     </div>
 </template>

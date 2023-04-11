@@ -5,15 +5,15 @@ import { useRouter } from "vue-router";
 
 export const useUserAccountStore = defineStore('userAccount',()=>{
     const isLoggedCookie = Cookies.get('isLogged');
-    const usernameCookie = Cookies.get('username');
+    const emailCookie = Cookies.get('email');
     const isLogged = isLoggedCookie ? ref(true) : ref(false);
-    const username = usernameCookie ? ref(usernameCookie) : ref(undefined);
+    const email = emailCookie ? ref(emailCookie) : ref(undefined);
     const router = useRouter();
 
-    function login(usernameInput){
+    function login(emailInput){
         if(isLogged.value === false){
             isLogged.value = true;
-            username.value = usernameInput;
+            email.value = emailInput;
         }else{
             throw(new Error('用户已登录'));
         }
@@ -21,9 +21,9 @@ export const useUserAccountStore = defineStore('userAccount',()=>{
     function logout(){
         if(isLogged.value === true){
             isLogged.value = false;
-            username.value = undefined;
+            email.value = undefined;
             Cookies.remove('isLogged');
-            Cookies.remove('username');
+            Cookies.remove('email');
             alert('退出成功！');
             router.push('/');
         }else{
@@ -33,7 +33,7 @@ export const useUserAccountStore = defineStore('userAccount',()=>{
 
     return{
         isLogged,
-        username,
+        email,
         login,
         logout
     }

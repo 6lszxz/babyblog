@@ -10,8 +10,7 @@ import {useRouter} from 'vue-router'
 import 'bytemd/dist/index.css'
 
 const userAccountStore = useUserAccountStore();
-const articleInEditing = ref(new Article('', userAccountStore.username,''));
-console.log(userAccountStore.username);
+const articleInEditing = ref(new Article('', userAccountStore.email,''));
 // 插件，让其支持GFM语法
 const plugins =[gfm(),];
 
@@ -19,7 +18,6 @@ const router = useRouter()
 
 function updateRendering(value){
     articleInEditing.value.content = value;
-    console.log(articleInEditing.value);
 }
 
 function addArticle(){

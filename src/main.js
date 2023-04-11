@@ -8,6 +8,7 @@ import register from './pages/register.vue'
 import login from './pages/login.vue'
 import articleEditor from './pages/articleEditor.vue'
 import articleReading from './pages/articleReading.vue'
+import space from './pages/space.vue'
 
 import './assets/main.css'
 
@@ -16,7 +17,10 @@ const routes =[
     {path: '/register', component: register},
     {path: '/login', component: login},
     {path: '/articleEditor', component: articleEditor},
-    {path: '/article/:id', component: articleReading}
+    {path: '/article/:id', component: articleReading},
+    {path:'/space/:id',component: space, children:[
+        {path:''}
+    ]}
 ]
 
 const router = vueRouter.createRouter({

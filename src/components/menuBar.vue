@@ -62,6 +62,11 @@ const buttonClass = computed(()=>{
 }
 
 li{
+    text-align: center;
+    /* 水平居中 */
+    border-radius: 5px;
+    list-style-type: none;
+    /* 去掉象征列表的圆点 */
     margin-left: 5vw;
     margin-right: 5vw;
     margin-top: 1vh;
@@ -70,12 +75,29 @@ li{
 }
 
 li:hover{
-    background-color: aqua;
+    animation-duration: 0.5s;
+    /* 动画时长 */
+    animation-name: pointerTo;
+    /* 动画名，即所触发的关键帧 */
+    animation-iteration-count: 1;
+    /* 鼠标指针扫上去时只触发一次 */
+    animation-fill-mode: forwards;
+    /* 播放完毕后保持最后一帧的状态 */
     cursor: pointer;
 }
 
+@keyframes pointerTo{
+    from{
+
+    }
+    /* 初始状态，默认即可 */
+    to{
+        background-color: #FFF6BF;
+    }
+    /* 末状态 */
+}
 .active{
-    background-color: chartreuse;
+    background-color: #FFF6BF;
 }
 
 </style>
