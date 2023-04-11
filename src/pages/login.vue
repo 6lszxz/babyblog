@@ -59,7 +59,7 @@ getCaptcha();
         <input v-model="passwordInput"/>
         <h2>验证码</h2>
         <input v-model="captchaInput"/>
-        <div v-html="captcha" @click="getCaptcha"></div>
+        <div v-html="captcha" @click="getCaptcha" id="captcha"></div>
         <button @click="login">登录</button>
     </div>
 </template>

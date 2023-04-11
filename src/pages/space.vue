@@ -6,9 +6,13 @@ const route = useRoute()
 </script>
 
 <template>
-{{ route.params.id }}
+    <h1>个人中心</h1>
+    <router-view></router-view>
 </template>
 
 <style scoped>
+h1{
+    margin-top: 0;
+}
 
 </style>

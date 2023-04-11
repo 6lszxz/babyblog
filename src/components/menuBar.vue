@@ -43,10 +43,14 @@ const buttonClass = computed(()=>{
 
         <li @click="routerTo('/articleEditor')"
         :class="buttonClass('/articleEditor')">创作中心</li>
-    
+        
+        <li v-if="userAccountStore.isLogged"
+        @click="routerTo(`/space`)" 
+        :class="buttonClass('/space')">个人中心</li>
 
         <li v-if="userAccountStore.isLogged" 
         @click="userAccountStore.logout">退出登录</li>
+
     </ul>
 </template>
 

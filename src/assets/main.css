@@ -4,6 +4,19 @@
 }
 .informationInput *{
     width: 20vw;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    height: 2vh;
+}
+
+#captcha{
+    height: 8vh;
+    padding: 0;
+    margin: 0;
+}
+
+#captcha svg{
+    height: 8vh;
+    padding: 0;
+    margin :0;
 }

@@ -9,6 +9,7 @@ import login from './pages/login.vue'
 import articleEditor from './pages/articleEditor.vue'
 import articleReading from './pages/articleReading.vue'
 import space from './pages/space.vue'
+import articleList from './components/articleList.vue'
 
 import './assets/main.css'
 
@@ -19,7 +20,7 @@ const routes =[
     {path: '/articleEditor', component: articleEditor},
     {path: '/article/:id', component: articleReading},
     {path:'/space/:id',component: space, children:[
-        {path:''}
+        {path:'articles', component: articleList},
     ]}
 ]
 
