@@ -1,7 +1,14 @@
 <script setup>
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+import { useUserAccountStore } from '../stores/userAccount';
 
-const route = useRoute()
+const route = useRoute();
+const router = useRouter();
+
+const userAccountStore = useUserAccountStore();
+if(route.params.id === userAccountStore.id){
+    router.push()
+}
 
 </script>
 

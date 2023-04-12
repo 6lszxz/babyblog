@@ -24,8 +24,8 @@ function login(){
         captcha: captcha,
     })
     .then((response)=>{
-        userAccountStore.login(emailInput.value);
-        alert(response.data);
+        userAccountStore.login(response.data.id);
+        alert(response.data.msg);
         router.push('/');
     })
     .catch((err)=>{

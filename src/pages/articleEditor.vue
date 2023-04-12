@@ -10,7 +10,7 @@ import {useRouter} from 'vue-router'
 import 'bytemd/dist/index.css'
 
 const userAccountStore = useUserAccountStore();
-const articleInEditing = ref(new Article('', userAccountStore.email,''));
+const articleInEditing = ref(new Article('', userAccountStore.id,''));
 // 插件，让其支持GFM语法
 const plugins =[gfm(),];
 
@@ -39,11 +39,6 @@ function addArticle(){
     .catch((err)=>{
         alert(`发布文章失败，${err.response.data}`);
     })
-}
-
-if(!userAccountStore.isLogged){
-    alert('您还没有登录，请先登录');
-    router.push('/login');
 }
 
 </script>
