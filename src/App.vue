@@ -1,6 +1,5 @@
 <script setup>
 import menuBar from './components/menuBar.vue';
-
 </script>
 
 <template>
