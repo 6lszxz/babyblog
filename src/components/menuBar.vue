@@ -45,8 +45,8 @@ const buttonClass = computed(()=>{
         :class="buttonClass('/articleEditor')">创作中心</li>
         
         <li v-if="userAccountStore.isLogged"
-        @click="routerTo(`/space`)" 
-        :class="buttonClass('/space')">个人中心</li>
+        @click="routerTo(`/mySpace`)" 
+        :class="buttonClass('/mySspace')">个人中心</li>
 
         <li v-if="userAccountStore.isLogged" 
         @click="userAccountStore.logout">退出登录</li>

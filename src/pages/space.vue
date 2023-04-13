@@ -6,9 +6,6 @@ const route = useRoute();
 const router = useRouter();
 
 const userAccountStore = useUserAccountStore();
-if(route.params.id === userAccountStore.id){
-    router.push()
-}
 
 </script>
 
@@ -19,7 +16,7 @@ if(route.params.id === userAccountStore.id){
 
 <style scoped>
 h1{
-    margin-top: 0;
+    margin-top: 1vh;
 }
 
 </style>

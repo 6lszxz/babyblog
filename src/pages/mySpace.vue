@@ -4,4 +4,5 @@
 
 <template>
     我的空间
+    <router-view></router-view>
 </template>
