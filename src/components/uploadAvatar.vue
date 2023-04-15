@@ -1,4 +1,11 @@
 <script setup>
+import axios from 'axios'
+
+
+function upload(event){
+    const file = event.target.files[0];
+
+}
 
 </script>
 
@@ -6,8 +13,11 @@
     <div>
         上传头像
         <img>
-        <button> 上传</button>
+        <input type="file" @change="upload"/>
     </div>
 
 </template>
+
+<style scoped>
+</style>
 

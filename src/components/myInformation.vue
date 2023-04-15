@@ -1,12 +1,16 @@
 <script setup>
+import { ref } from 'vue';
 
+import uploadAvatar from './uploadAvatar.vue';
+
+const uploadAvaterIsOn = ref(false);
 </script>
 
 <template>
 基本信息
     <ul>
         <li>
-            <h3>头像</h3>
+            <h3 @click="uploadAvaterIsOn = !uploadAvaterIsOn">头像</h3>
             <img>
         </li>
         <li>
@@ -28,6 +32,7 @@
             <div></div>
         </li>
     </ul>
+    <uploadAvatar v-if="uploadAvaterIsOn"></uploadAvatar>
 </template>
 
 <style scoped>
