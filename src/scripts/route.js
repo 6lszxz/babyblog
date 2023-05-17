@@ -12,6 +12,7 @@ import space from '../pages/space.vue'
 import articleList from '../components/articleList.vue'
 import mySpace from '../pages/mySpace.vue'
 import myInformation from '../components/myInformation.vue'
+import myArticles from '../components/myArticles.vue'
 
 
 const routes =[
@@ -27,7 +28,8 @@ const routes =[
     },
     {path: '/mySpace', component: mySpace,
         children:[
-            {path:'', component: myInformation}
+            {path:'', component: myInformation},
+            {path:'/myArticles',component: myArticles}
         ]
     }
 ]

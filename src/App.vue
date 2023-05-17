@@ -5,7 +5,9 @@ import menuBar from './components/menuBar.vue';
 <template>
     <menu-bar/>
     <div class="main">
-        <router-view/>
+        <suspense>
+            <router-view/>
+        </suspense>
     </div>
     
 </template>

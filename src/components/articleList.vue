@@ -3,8 +3,9 @@
 </script>
 
 <template>
-博客列表
+    文章列表
 </template>
 
-<style>
+<style scoped>
+
 </style>
