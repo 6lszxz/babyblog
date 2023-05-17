@@ -11,7 +11,7 @@ describe('test uploadAvatar',()=>{
         const wrapper = mount(uploadAvatar,{
             
         })
-        // 看看组件里面包不包括'头像'v这个字符串
+        // 看看组件里面包不包括'头像'这个字符串
         expect(wrapper.text()).contain('头像')
     })
 })
